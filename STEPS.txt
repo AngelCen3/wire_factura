@@ -1,0 +1,65 @@
+Set-PSReadlineOption -HistorySaveStyle SaveIncrementally
+Get-History > historial.txt
+laravel new invoice
+cd invoice
+composer require laravel/breeze --dev
+php artisan breeze:install
+code .
+php artisan migrate
+
+///-----Will register---> With breeze
+
+//resources\views\layouts\app.blade.php
+
+        <!-- Fonts  ---3We´ll delete all this3
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />  -->
+
+        **************************************************************************************************************
+
+        <!-- Page Heading -----3We´ll delete all this3 
+            @if (isset($header))
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif  -->
+
+######.......>
+git init
+git add .
+git commit -m "project start"   
+git remote add origin git@github.com:AngelCen3/invoice.git
+git branch -M main
+git push -u origin main
+------------------------------------------------
+
+             LOGO---ELIMINATE
+---------------------------------------------------
+        //  resources\views\layouts\navigation.blade.php
+            <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                    </a>
+                </div>
+
+-#--------> composer require livewire/livewire
+    HTML-->
+        @livewireStyles
+        @livewireScripts
+
+php artisan livewire:publish --config //change the directory
+        'layout' => 'components.layouts.app',  --->    'layout' => 'layouts.app',
+
+
+dashboard.blade.php   <----We´ll delete those files
+welcome.blade.php
+
+---->routes\web.php
+    Route::get('/', \App\Livewire\Clientes::class)    //Show me all clients
+        ->middleware('auth')
+        ->name('dashboard');
+
+Documentation---->  Available Column Types
