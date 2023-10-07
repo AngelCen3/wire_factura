@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('clientems', function (Blueprint $table) {
             $table->id();
+            
+            $table->unsignedBigInteger('empresa_id')->nullable();
+            $table->foreign('empresa_id')
+                ->references('id')
+                ->on('empresas');
 
-            $table->string('cliente');
+            $table->string('cliente'); 
             $table->string('contacto');
             $table->enum('forma_pago',  ['Contado', 'Credito']);
             $table->enum('metodo_pago', ['Efectivo', 'Tarjeta', 'Transferencia', 'Cheque']);

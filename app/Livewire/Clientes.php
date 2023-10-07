@@ -2,12 +2,16 @@
 
 namespace App\Livewire;
 
+use App\Models\Clientem;
 use Livewire\Component;
 
 class Clientes extends Component
 {
     public function render()
     {
-        return view('livewire.clientes');  //reder this view
+        $clientes = Clientem::get();
+        return view('livewire.clientes', [
+            'clientes' => $clientes
+        ]);  //reder this view
     }
 }

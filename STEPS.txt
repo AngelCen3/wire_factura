@@ -63,3 +63,22 @@ welcome.blade.php
         ->name('dashboard');
 
 Documentation---->  Available Column Types
+
+
+ php artisan make:model Clientem -mf 
+
+ ************************************************************************
+   #ERROR#
+ // Cargar la configuracion general y Catalogos
+var _db = ConfigSAX.dbSis;
+var empresa = _db.Empresa.FirstOrDefault(p => p.IdEmpr == 1);
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<appSettings>
+		<add key="BDSistema" value="C:\BD\bdSistema.db" />
+		<add key="BDCatalogo" value="C:\BD\bdCatalogo.db" />
+	</appSettings>
+</configuration>
+
+ ************************************************************************

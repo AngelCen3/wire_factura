@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Empresa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,7 +17,10 @@ class ClientemFactory extends Factory
      */
     public function definition(): array
     {
+        $empresaIds = Empresa::pluck('id')->toArray(); // Obtener todos los IDs de empresas
+
         return [
+            'empresa_id' => $this->faker->randomElement($empresaIds), // Seleccionar aleatoriamente un ID de empresa
             'cliente' => fake()->word(),
             'contacto' => fake()->word(),
             'forma_pago' => fake()->randomElement(['Contado', 'Crédito']),
